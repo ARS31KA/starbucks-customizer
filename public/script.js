@@ -21,8 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       resultDiv.innerHTML = `
         <h2>おすすめカスタム</h2>
-        <p>ドリンク: ${drink}</p>
+        <p>カテゴリ: ${drink}</p>
         <p>サイズ: ${size}</p>
+        <p>選ばれたドリンク: ${data.drinkName}</p>
         <p>提案: ${data.suggestion}</p>
         <p>価格: ¥${data.price}</p>
         <p>カロリー: ${data.calories} kcal</p>

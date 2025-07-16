@@ -46,6 +46,62 @@ async function main() {
     update: {},
     create: { name: "Venti" },
   });
+  //syurui
+  const matchaFrappuccino = await prisma.drink.upsert({
+  where: { name: "抹茶クリームフラペチーノ" },
+  update: {},
+  create: { name: "抹茶クリームフラペチーノ", type: "フラペチーノ" },
+});
+
+const coffeeFrappuccino = await prisma.drink.upsert({
+  where: { name: "コーヒーフラペチーノ" },
+  update: {},
+  create: { name: "コーヒーフラペチーノ", type: "フラペチーノ" },
+});
+
+const darkMochaChipFrappuccino = await prisma.drink.upsert({
+  where: { name: "ダークモカチップフラペチーノ" },
+  update: {},
+  create: { name: "ダークモカチップフラペチーノ", type: "フラペチーノ" },
+});
+const dripCoffee = await prisma.drink.upsert({
+  where: { name: "ドリップコーヒー" },
+  update: {},
+  create: { name: "ドリップコーヒー", type: "コーヒー" },
+});
+
+const americano = await prisma.drink.upsert({
+  where: { name: "カフェアメリカーノ" },
+  update: {},
+  create: { name: "カフェアメリカーノ", type: "コーヒー" },
+});
+
+const caramelMacchiato = await prisma.drink.upsert({
+  where: { name: "キャラメルマキアート" },
+  update: {},
+  create: { name: "キャラメルマキアート", type: "コーヒー" },
+});
+
+const hojichaTea = await prisma.drink.upsert({
+  where: { name: "ほうじ茶クラシックティーラテ" },
+  update: {},
+  create: { name: "ほうじ茶クラシックティーラテ", type: "ティー" },
+});
+
+const chaiTeaLatte = await prisma.drink.upsert({
+  where: { name: "チャイティーラテ" },
+  update: {},
+  create: { name: "チャイティーラテ", type: "ティー" },
+});
+
+const earlGreyTea = await prisma.drink.upsert({
+  where: { name: "アールグレイティー" },
+  update: {},
+  create: { name: "アールグレイティー", type: "ティー" },
+});
+
+
+
 
   // Customizationデータ
   const oat = await prisma.customization.upsert({
