@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>スタバカスタム提案</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>スターバックス カスタム提案アプリ</h1>
+
+    <form id="custom-form">
+      <label for="drink">飲み物の種類:</label>
+      <select id="drink" name="drink">
+        <option value="フラペチーノ">フラペチーノ</option>
+        <option value="コーヒー">コーヒー</option>
+        <option value="紅茶">紅茶</option>
+      </select>
+
+      <label for="size">サイズ:</label>
+      <select id="size" name="size">
+        <option value="Short">Short</option>
+        <option value="Tall">Tall</option>
+        <option value="Grande">Grande</option>
+        <option value="Venti">Venti</option>
+      </select>
+
+      <button type="submit">カスタムを提案して！</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Drink {
+  id       Int      @id @default(autoincrement())
+  name     String   @unique
+  type     String
+  customizations DrinkCustomization[]
+}
+
+model Size {
+  id       Int      @id @default(autoincrement())
+  name     String   @unique
+  customizations DrinkCustomization[]
+}
+
+model Customization {
+  id              Int     @id @default(autoincrement())
+  name            String  @unique
+  priceModifier   Decimal @db.Decimal(5, 2)
+  calorieModifier Int
+  drinkCustomizations DrinkCustomization[]
+}
+
+model DrinkCustomization {
+  id                     Int      @id @default(autoincrement())
+  drink                  Drink    @relation(fields: [drinkId], references: [id])
+  drinkId                Int
+  size                   Size     @relation(fields: [sizeId], references: [id])
+  sizeId                 Int
+  customization          Customization @relation(fields: [customizationId], references: [id])
+  customizationId        Int
+  basePrice              Decimal  @db.Decimal(5, 2)
+  baseCalories           Int
+  suggestedCustomizationName String
+}
